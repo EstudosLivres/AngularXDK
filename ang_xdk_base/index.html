@@ -1,0 +1,51 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html ng-app='MobApp'>
+<head>
+	<title>Your New Application</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+	<style type="text/css">
+		/* Prevent copy paste for all elements except text fields */
+		*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+		input, textarea  { -webkit-user-select:text; }
+		body { background-color:white; color:black }
+	</style>
+	<script src='intelxdk.js'></script>
+	<script type="text/javascript">
+		/* This code is used to run as soon as Intel activates */
+		var onDeviceReady=function(){
+		//hide splash screen
+		intel.xdk.device.hideSplashScreen();
+		};
+		document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+	</script>
+
+	<!-- TODO o estilo do App -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- /TODO o estilo do App -->
+
+	<!-- Frameworks -->
+	<script type="text/javascript" src="js/modernizr.min.js"></script>
+	<script type="text/javascript" src="js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/jq/jq.min.js"></script>
+	<!-- /Frameworks -->
+</head>
+<body>
+	
+	<div id="index" ng-controller="IndexController">
+		<div ng-init="search()"> {{ retorno }} </div>
+	</div>
+	
+	<footer id="includes_js">
+		<!-- Extensões -->
+		<script type="text/javascript" src="js/angular/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="js/angular/angular-touch.min.js"></script>
+		<!-- /Extensões -->
+
+		<!-- Meu App -->
+		<script type="text/javascript" src="js/app_js/base_app.js"></script>
+		<script type="text/javascript" src="js/app_js/IndexController.js"></script>
+		<!-- /Meu App -->
+	</footer>
+</body>
+</html>
